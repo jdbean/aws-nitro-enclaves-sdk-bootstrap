@@ -25,7 +25,7 @@ $(BUILDDIR)/linux: $(BUILDDIR)/linux.tar $(BUILDDIR)/linux.sign
 	tar -xf $(BUILDDIR)/linux.tar --one-top-level=linux --strip-components 1 -C $(BUILDDIR)
 
 $(BUILDDIR)/linux/.config: $(BUILDDIR)/linux microvm-kernel-config-x86_64
-	make KCONFIG_ALLCONFIG=$$(pwd)/microvm-kernel-config-x86_64 -C $(BUILDDIR)/linux allnoconfig
+	make KCONFIG_ALLCONFIG=$$(pwd)/microvm-kernel-config-x86_64 -C $(BUILDDIR)/linux alldefconfig
 
 $(BUILDDIR)/bzImage: $(BUILDDIR)/linux $(BUILDDIR)/linux/.config
 	make -j$(nprocs) -C $(BUILDDIR)/linux

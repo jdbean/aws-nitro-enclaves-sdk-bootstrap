@@ -16,6 +16,10 @@ For Amazon Linux 2 / Fedora / RHEL / CentOS install build prequisites:
 ```
 sudo yum group install "Development Tools" 
 ```
+### Building newer kernel versions
+
+To build newer kernel versions update `linux-url` with the location of the kernel source
+archives and corresponding signature.
 
 ## Security
 
